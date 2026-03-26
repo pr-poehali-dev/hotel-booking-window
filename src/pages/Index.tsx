@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
-const HOTEL_IMAGE = "https://cdn.poehali.dev/projects/f838007e-45bf-42d4-b17c-23d30b4e4ded/files/e1d8a51c-27b6-4e0b-bad6-1ef586b14b3c.jpg";
+const HOTEL_IMAGE = "https://cdn.poehali.dev/projects/f838007e-45bf-42d4-b17c-23d30b4e4ded/files/26b0bb9b-2664-4685-8ab7-05284300aaa2.jpg";
 
 const rooms = [
   {
@@ -166,8 +167,8 @@ function BookingModal({ room, onClose }: { room: Room | null; onClose: () => voi
 }
 
 export default function Index() {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("hero");
-  const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -207,7 +208,7 @@ export default function Index() {
         style={{ background: "linear-gradient(180deg, rgba(15,13,10,0.95) 0%, rgba(15,13,10,0) 100%)" }}>
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <button onClick={() => scrollTo("hero")} className="font-display text-2xl text-[#C9A96E] tracking-wider">
-            Grand Lumière
+            Ramada Novosibirsk
           </button>
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
@@ -218,7 +219,7 @@ export default function Index() {
                 {link.label}
               </button>
             ))}
-            <button onClick={() => scrollTo("rooms")}
+            <button onClick={() => navigate("/booking")}
               className="px-6 py-2.5 border border-[#C9A96E] text-[#C9A96E] font-sans text-xs tracking-[0.15em] uppercase hover:bg-[#C9A96E] hover:text-[#0F0D0A] transition-all duration-300 rounded-sm">
               Забронировать
             </button>
@@ -250,17 +251,17 @@ export default function Index() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <p className="animate-fade-in-delay-1 font-sans text-xs tracking-[0.4em] uppercase text-[#C9A96E] mb-6">
-            Москва · С 1998 года
+            Новосибирск · С 1998 года
           </p>
           <h1 className="animate-fade-in-delay-2 font-display text-7xl md:text-9xl font-light text-[#E8D5A3] leading-none mb-4">
-            Grand Lumière
+            Ramada Novosibirsk
           </h1>
           <div className="animate-fade-in-delay-2 h-px w-40 mx-auto my-6" style={{ background: "linear-gradient(90deg, transparent, #C9A96E, transparent)" }} />
           <p className="animate-fade-in-delay-3 font-display italic text-xl md:text-2xl text-[#C9A96E] mb-12 font-light">
             Где роскошь встречает безупречность
           </p>
           <div className="animate-fade-in-delay-3 flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => scrollTo("rooms")}
+            <button onClick={() => navigate("/booking")}
               className="px-10 py-4 bg-[#C9A96E] text-[#0F0D0A] font-sans text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#E8D5A3] transition-all duration-300 rounded-sm">
               Выбрать номер
             </button>
@@ -334,7 +335,7 @@ export default function Index() {
                         <span className="font-sans text-xs text-[#6b5a40] ml-1">/ ночь</span>
                       </p>
                     </div>
-                    <button onClick={() => setSelectedRoom(room)}
+                    <button onClick={() => navigate(`/booking?room=${room.id}`)}
                       className="px-5 py-2.5 border border-[#C9A96E] text-[#C9A96E] font-sans text-xs tracking-wider uppercase hover:bg-[#C9A96E] hover:text-[#0F0D0A] transition-all duration-300 rounded-sm">
                       Забронировать
                     </button>
@@ -391,7 +392,7 @@ export default function Index() {
                   <div className="h-px mb-5" style={{ background: "linear-gradient(90deg, transparent, #C9A96E, transparent)" }} />
                   <div className="flex items-center justify-between">
                     <p className="font-display text-xl text-[#C9A96E]">{offer.price}</p>
-                    <button onClick={() => setSelectedRoom(rooms[0])}
+                    <button onClick={() => navigate("/booking")}
                       className="px-4 py-2 border border-[rgba(201,169,110,0.4)] text-[#C9A96E] font-sans text-xs tracking-wider uppercase hover:border-[#C9A96E] hover:bg-[rgba(201,169,110,0.1)] transition-all duration-300 rounded-sm">
                       Выбрать
                     </button>
@@ -453,8 +454,8 @@ export default function Index() {
       {/* Footer */}
       <footer className="border-t border-[rgba(201,169,110,0.15)] bg-[#0A0805]">
         <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="font-display text-xl text-[#C9A96E]">Grand Lumière</p>
-          <p className="font-sans text-xs text-[#4a3f2f]">© 2026 Grand Lumière. Все права защищены.</p>
+          <p className="font-display text-xl text-[#C9A96E]">Ramada Novosibirsk</p>
+          <p className="font-sans text-xs text-[#4a3f2f]">© 2026 Ramada Novosibirsk. Все права защищены.</p>
           <div className="flex gap-6">
             {navLinks.map((link) => (
               <button key={link.id} onClick={() => scrollTo(link.id)}
@@ -466,7 +467,7 @@ export default function Index() {
         </div>
       </footer>
 
-      {selectedRoom && <BookingModal room={selectedRoom} onClose={() => setSelectedRoom(null)} />}
+
     </div>
   );
 }
