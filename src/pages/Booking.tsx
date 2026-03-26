@@ -3,9 +3,9 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const rooms = [
-  { id: 1, name: "Классический номер", price: 8900, size: "32 м²" },
-  { id: 2, name: "Делюкс номер", price: 14500, size: "48 м²" },
-  { id: 3, name: "Президентский люкс", price: 42000, size: "120 м²" },
+  { id: 1, name: "Студия", price: 7500, size: "40 м²" },
+  { id: 2, name: "Апартаменты с 1 спальней", price: 11500, size: "65 м²" },
+  { id: 3, name: "Апартаменты с 2 спальнями", price: 17000, size: "95 м²" },
 ];
 
 const steps = ["Номер", "Даты и гости", "Контакты", "Подтверждение"];

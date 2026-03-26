@@ -2,38 +2,38 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
-const HOTEL_IMAGE = "https://cdn.poehali.dev/projects/f838007e-45bf-42d4-b17c-23d30b4e4ded/files/26b0bb9b-2664-4685-8ab7-05284300aaa2.jpg";
+const HOTEL_IMAGE = "https://cdn.poehali.dev/projects/f838007e-45bf-42d4-b17c-23d30b4e4ded/bucket/19db4ff1-07cf-44fc-8115-41bd1f3d1997.jpg";
 
 const rooms = [
   {
     id: 1,
-    name: "Классический номер",
-    size: "32 м²",
-    price: 8900,
+    name: "Студия",
+    size: "40 м²",
+    price: 7500,
     oldPrice: null as number | null,
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
-    features: ["Вид на сад", "Двуспальная кровать", "Мини-бар"],
+    image: "https://cdn.poehali.dev/projects/f838007e-45bf-42d4-b17c-23d30b4e4ded/files/91590c58-15bd-4011-a2dc-4203a027b606.jpg",
+    features: ["Двуспальная кровать", "Кухня-студия", "Кондиционер"],
     badge: null as string | null,
   },
   {
     id: 2,
-    name: "Делюкс номер",
-    size: "48 м²",
-    price: 14500,
-    oldPrice: 18000 as number | null,
-    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80",
-    features: ["Панорамный вид", "Гидромассажная ванна", "Балкон"],
-    badge: "Хит продаж" as string | null,
+    name: "Апартаменты с 1 спальней",
+    size: "65 м²",
+    price: 11500,
+    oldPrice: null as number | null,
+    image: "https://cdn.poehali.dev/projects/f838007e-45bf-42d4-b17c-23d30b4e4ded/files/71922d09-087f-420f-bd5c-28b7606f4f12.jpg",
+    features: ["Отдельная спальня", "Гостиная", "Полная кухня"],
+    badge: "Популярный" as string | null,
   },
   {
     id: 3,
-    name: "Президентский люкс",
-    size: "120 м²",
-    price: 42000,
+    name: "Апартаменты с 2 спальнями",
+    size: "95 м²",
+    price: 17000,
     oldPrice: null as number | null,
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80",
-    features: ["Вид на реку", "Личный дворецкий", "Терраса с джакузи"],
-    badge: "Эксклюзив" as string | null,
+    image: "https://cdn.poehali.dev/projects/f838007e-45bf-42d4-b17c-23d30b4e4ded/files/53ddccc7-90ec-4bab-990e-d4e30f1d0278.jpg",
+    features: ["2 спальни", "Панорамные окна", "Просторная гостиная"],
+    badge: null as string | null,
   },
 ];
 
@@ -251,7 +251,7 @@ export default function Index() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <p className="animate-fade-in-delay-1 font-sans text-xs tracking-[0.4em] uppercase text-[#C9A96E] mb-6">
-            Новосибирск · С 1998 года
+            Новосибирск
           </p>
           <h1 className="animate-fade-in-delay-2 font-display text-7xl md:text-9xl font-light text-[#E8D5A3] leading-none mb-4">
             Ramada Novosibirsk
